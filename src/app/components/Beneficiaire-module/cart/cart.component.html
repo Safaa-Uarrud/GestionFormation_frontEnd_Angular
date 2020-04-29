@@ -1,0 +1,38 @@
+<app-header-beneficiaire></app-header-beneficiaire>
+<app-navigation-menu-beneficiaire></app-navigation-menu-beneficiaire>
+<div id="wrapper">
+  <app-breadcrumb-beneficiaire></app-breadcrumb-beneficiaire>
+  <div class="content animate-panel">
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h2>la Liste des formations Validés</h2>
+      </div>
+      <div class="panel-body">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>IdFormation</th>
+            <th>Titre</th>
+            <th>Prix</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cart of cart | async">
+            <td>{{cart.id}}</td>
+            <td>{{cart.titre}}</td>
+            <td>{{cart.prix}}</td>
+          <td>
+            <button (click)="deleteCart(cart.idCart)" class="btn btn-danger"style="margin-right: 10px">Retirer</button>
+            <button (click)="inscrireCart(cart.idCart)" class="btn btn-info" style="text-align: right">Inscription formation</button>
+          </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>  
+  <app-right-sidebar></app-right-sidebar>
+  <app-footer></app-footer>
+</div>
+

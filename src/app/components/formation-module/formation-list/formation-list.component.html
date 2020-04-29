@@ -1,0 +1,45 @@
+
+<app-header></app-header>
+<app-navigation-menu></app-navigation-menu>
+
+<div id="wrapper">
+  <app-breadcrumb></app-breadcrumb>
+
+  <div class="content animate-panel">
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h2>Formations List</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Titre</th>
+        <th>Langue</th>
+        <th>Prix</th>
+        <th>Emplacement</th>
+        <th>Date</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let formation of formation | async">
+        <td>{{formation.titre}}</td>
+        <td>{{formation.langue}}</td>
+        <td>{{formation.prix}}</td>
+        <td>{{formation.emplacement}}</td>
+        <td><span class="badge">{{formation.dateDeFormation |date:'dd-MM-yyyy'}}</span></td>
+        <td><button (click)="deleteFormation(formation.id)" class="btn btn-danger">Delete</button>
+          <button (click)="updateFormation(formation.id)" class="btn btn-info" style="margin-left: 10px">Update</button>
+          <button (click)="formationDetails(formation.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+  </div>
+  <app-right-sidebar></app-right-sidebar>
+  <app-footer></app-footer>
+</div>
+

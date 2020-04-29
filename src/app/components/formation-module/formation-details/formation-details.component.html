@@ -1,0 +1,27 @@
+<app-header></app-header>
+<app-navigation-menu></app-navigation-menu>
+
+<div id="wrapper">
+  <app-breadcrumb></app-breadcrumb>
+  <div class="content animate-panel">
+<h2>Formation Details</h2>
+<hr/>
+<div *ngIf="formation">
+  <div>
+    <label><b>Titre: </b></label> {{formation.titre}}
+  </div>
+  <div>
+    <label><b>Langue: </b></label> {{formation.langue}}
+  </div>
+  <div>
+    <label><b>Description: </b></label> {{formation.description}}
+  </div>
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Back to Formation List</button><br>
+    <app-right-sidebar></app-right-sidebar>
+    <app-footer></app-footer>
+  </div>
+  </div>

@@ -1,0 +1,88 @@
+<app-header></app-header>
+<app-navigation-menu></app-navigation-menu>
+
+<div id="wrapper">
+  <app-breadcrumb></app-breadcrumb>
+
+  <div class="content animate-panel">
+    <h3>Ajouter Cv</h3>
+    <div class="row">
+      <div class="col-lg-5">
+        <div class="hpanel">
+          <div class="panel-heading">
+            <div class="panel-tools">
+              <a class="showhide"><i class="fa fa-chevron-up"></i></a>
+              <a class="closebox"><i class="fa fa-times"></i></a>
+            </div>
+new
+          </div>
+          <div class="panel-body">
+            <form (ngSubmit)="onSubmit()" class="form-horizontal">
+              <div class="form-group">
+                <label for="firstName" class="col-sm-2 control-label">FirstName</label>
+                <div class="col-sm-10"><input  placeholder="FirstName" type="text" class="form-control" id="firstName" required [(ngModel)]="resume.firstName" name="firstName"></div>
+              </div>
+
+              <div class="hr-line-dashed"></div>
+
+              <div class="form-group">
+              <label class="col-sm-2 control-label" for="lastName">LastName</label>
+                <div class="col-sm-10">
+                  <input type="text" placeholder="LastName" class="form-control" id="lastName" required [(ngModel)]="resume.lastName" name="LastName"></div>
+              </div>
+
+              <div class="hr-line-dashed"></div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="adress">Adress</label>
+                <div class="col-sm-10">
+                  <input type="text" placeholder="Adress" class="form-control" id="adress" required [(ngModel)]="resume.adress" name="adress"></div>
+              </div>
+
+              <div class="hr-line-dashed"></div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="email">E-mail</label>
+                <div class="col-sm-10">
+                  <input type="text" placeholder="E-mail" class="form-control" id="email" required [(ngModel)]="resume.email" name="email"></div>
+              </div>
+
+              <div class="hr-line-dashed"></div>
+
+              <div class="form-group">
+                <label for="experience" class="col-sm-2 control-label">Experience </label>
+                <div class="col-sm-10"><input  placeholder="Experience" type="text" class="form-control" id="experience" required [(ngModel)]="resume.experience" name="experience"></div>
+              </div>
+
+              <div class="hr-line-dashed"></div>
+              <div class="form-group">
+                <label for="telephone" class="col-sm-2 control-label">Phone</label>
+                <div class="col-sm-10"><input   placeholder="Phone" type="text" class="form-control" id="telephone" required [(ngModel)]="resume.phone" name="telephone"></div>
+              </div>
+
+              <div class="hr-line-dashed"></div>
+              <div class="form-group">
+                <label for="birthDate" class="col-sm-2 control-label">Date of birth </label>
+                <div class="col-sm-10"><input type="text" class="form-control" id="birthDate"  value="2020-04-02"required [(ngModel)]="resume.birthDate" name="birthDate">
+                </div>
+              </div>
+              <div class="hr-line-dashed"></div>
+              <div class="form-group">
+                <div class="col-sm-8 col-sm-offset-2">
+                  <button class="btn btn-primary" type="submit">Create</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+  </div>
+  <app-right-sidebar></app-right-sidebar>
+  <app-footer></app-footer>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>You submitted successfully!</h4>
+
+</div>
+</div>

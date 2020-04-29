@@ -1,0 +1,44 @@
+<app-header-beneficiaire></app-header-beneficiaire>
+<app-navigation-menu-beneficiaire></app-navigation-menu-beneficiaire>
+<div id="wrapper">
+  <app-breadcrumb-beneficiaire></app-breadcrumb-beneficiaire>
+
+  <div class="content animate-panel">
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h2>La Liste des Toutes les formations</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Titre</th>
+        <th>Langue</th>
+        <th>Prix</th>
+        <th>Emplacement</th>
+        <th>Date</th>
+        <th>Cv Formateur</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let formation of formation | async">
+        <td>{{formation.titre}}</td>
+        <td>{{formation.langue}}</td>
+        <td>{{formation.prix}}</td>
+        <td>{{formation.emplacement}}</td>
+        <td><span class="badge">{{formation.dateDeFormation |date:'yyyy-MM-dd'}}</span></td>
+        <td><a href={{formation.liencv}}>{{formation.liencv}}</a></td>
+        <td>
+        <button (click)="Details(formation.id)" class="btn btn-info" style="margin-right: 10px">Details</button>
+        <button class="btn btn-info" style="text-align: right" (click)="addCart(formation.id)">Valider</button>
+      </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+  </div>
+  <app-right-sidebar></app-right-sidebar>
+  <app-footer></app-footer>
+</div>
+
